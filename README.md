@@ -1,4 +1,4 @@
-# Plataforma de Contabilidad IV - PUCAR
+# Plataforma de Contabilidad IV - UCSAR
 
 ## 📚 Descripción
 Sistema web interactivo para la planificación de cátedra de Contabilidad IV (CON-2465) de la Pontificia Universidad Católica Santa Rosa.
@@ -106,3 +106,4 @@ Si necesitas ayuda con la implementación, contacta al desarrollador o consulta 
 - **Profesor:** Lic. Frank Clemente
 - **Período:** Octubre - Noviembre 2025
 - **Duración:** 9 sesiones
+
