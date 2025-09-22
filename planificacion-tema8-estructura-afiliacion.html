@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificación - Tema 8: Estructura de Afiliación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Paleta de colores elegida: profesional azul/gris -->
+    <!-- Plan de la estructura de la aplicación: Un tablero de una sola página con una navegación superior fija para saltar rápidamente entre secciones (Objetivos, Metodología, Práctica, Evaluación, Recursos). Esta estructura se eligió para transformar un documento lineal en una herramienta no lineal y fácil de usar para un instructor. Permite tanto una visión general secuencial al desplazarse como un acceso inmediato a componentes de planificación específicos. Las interacciones clave incluyen una lista de verificación visual para los objetivos, un gráfico dinámico para visualizar el peso de la evaluación y diseños basados en tarjetas para una mejor escaneabilidad. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative; 
+            width: 100%; 
+            max-width: 400px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 400px;
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-slate-800">CON-2465</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#objetivos" class="text-slate-600 hover:text-blue-600 transition">Objetivos</a>
+                    <a href="#metodologia" class="text-slate-600 hover:text-blue-600 transition">Metodología</a>
+                    <a href="#ejercicios" class="text-slate-600 hover:text-blue-600 transition">Ejercicios</a>
+                    <a href="#evaluacion" class="text-slate-600 hover:text-blue-600 transition">Evaluación</a>
+                    <a href="#recursos" class="text-slate-600 hover:text-blue-600 transition">Recursos</a>
+                </div>
+                <div class="md:hidden">
+                    <select id="mobile-nav" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="#">Menú</option>
+                        <option value="#objetivos">Objetivos</option>
+                        <option value="#metodologia">Metodología</option>
+                        <option value="#ejercicios">Ejercicios</option>
+                        <option value="#evaluacion">Evaluación</option>
+                        <option value="#recursos">Recursos</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-700">Planificación de Cátedra: Estructura de Afiliación. Cambios.</h1>
+            <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Tema 8 de Contabilidad IV, enfocado en la distribución de utilidades y la consolidación basada en la estructura de participación.</p>
+        </section>
+
+        <section id="objetivos" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Contenido y Objetivos Clave</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+                <p class="text-slate-600 mb-6">El estudiante debe ser capaz de cumplir con los siguientes objetivos de la unidad:</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="mr-3 text-xl mt-1">✓</span>
+                        <span><strong>Identificar y definir:</strong> La estructura de aplicación de cualquier relación existente entre la casa matriz y sus subsidiarias.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-xl mt-1">✓</span>
+                        <span><strong>Distribuir utilidades:</strong> Aplicar los procedimientos para distribuir las utilidades basándose en la estructura de afiliación.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-xl mt-1">✓</span>
+                        <span><strong>Elaborar borradores de consolidación:</strong> Utilizando el método del interés participante para eliminar la inversión.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-xl mt-1">✓</span>
+                        <span><strong>Eliminar utilidades o pérdidas:</strong> Generadas por la participación en cada subsidiaria.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-xl mt-1">✓</span>
+                        <span><strong>Manejar compras sucesivas:</strong> Aplicar el método paso a paso en la eliminación de la inversión cuando existan compras de acciones de forma sucesiva.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="metodologia" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Método y Estrategias de Aprendizaje</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                        <span class="text-2xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Presentación de Objetivos</h3>
+                    <p class="text-slate-600">Establecer el objetivo de identificar la obligatoriedad de consolidar y determinar los métodos a aplicar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                        <span class="text-2xl">👨‍🏫</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Exposición</h3>
+                    <p class="text-slate-600">Explicación detallada de los procedimientos para consolidar estados financieros y la aplicación de los métodos de inversión.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                        <span class="text-2xl">👥</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Resolución de Problemas</h3>
+                    <p class="text-slate-600">Asignar un caso integral que requiera la aplicación de los procedimientos técnicos de consolidación.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Debate de Cierre</h3>
+                    <p class="text-slate-600">Discutir y valorar las diferentes perspectivas en la aplicación de los métodos de consolidación.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicios" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Ejercicios Obligatorios y Prácticas</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+                <p class="text-slate-600 mb-6">La evaluación sumativa de esta unidad exige la capacidad de realizar los siguientes procedimientos contables:</p>
+                <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                    <li>Elaborar borradores de consolidación en función de la relación de afiliación.</li>
+                    <li>Aplicar el método del interés participante para la eliminación de la inversión.</li>
+                    <li>Eliminar las utilidades o pérdidas generadas por la participación en cada subsidiaria.</li>
+                    <li>Aplicar el método paso a paso en la eliminación de la inversión cuando existan compras de acciones de forma sucesiva.</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section id="evaluacion" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Evaluación del Tema 8</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
+                <div class="w-full lg:w-1/3">
+                    <div class="chart-container">
+                        <canvas id="evaluationChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full lg:w-2/3 space-y-4">
+                    <div id="card-sumativa" class="bg-white p-6 rounded-xl shadow-lg border-2 border-transparent transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-blue-700">Evaluación Sumativa</h3>
+                        <p class="text-slate-600 mt-2">Evalúa el dominio en la elaboración de ensayos de conceptos y la realización de ejercicios y prácticas.</p>
+                    </div>
+                    <div id="card-formativa" class="bg-white p-6 rounded-xl shadow-lg border-2 border-transparent transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-teal-700">Evaluación Formativa</h3>
+                        <p class="text-slate-600 mt-2">Mide la preparación y comprensión conceptual a través de un informe del contenido, la construcción de ejercicios y la exposición del tema.</p>
+                    </div>
+                    <div id="card-colaborativa" class="bg-white p-6 rounded-xl shadow-lg border-2 border-transparent transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-amber-700">Evaluación Colaborativa</h3>
+                        <p class="text-slate-600 mt-2">Evalúa la capacidad de trabajo en equipo, la participación activa en el debate y la valoración de múltiples perspectivas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Recursos y Herramientas</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Recursos Didácticos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="mr-3 text-xl">📚</span>Textos de Contabilidad.</li>
+                        <li class="flex items-center"><span class="mr-3 text-xl">🔍</span>Investigaciones previas de los estudiantes.</li>
+                        <li class="flex items-center"><span class="mr-3 text-xl">📄</span>Material fotocopiado (casos, guías).</li>
+                        <li class="flex items-center"><span class="mr-3 text-xl">칠</span>Pizarrón para la resolución de problemas.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Herramientas Tecnológicas</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="mr-3 text-xl">💬</span>Plataforma de comunicación.</li>
+                        <li class="flex items-center"><span class="mr-3 text-xl">📝</span>Documentos colaborativos.</li>
+                        <li class="flex items-center"><span class="mr-3 text-xl">🌐</span>Foros de discusión.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-white mt-16 border-t">
+        <div class="container mx-auto px-6 py-4 text-center text-slate-500">
+            <p>&copy; 2025 Planificación de Cátedra. Generado interactivamente.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('evaluationChart').getContext('2d');
+            const evaluationChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Formativa', 'Sumativa', 'Colaborativa'],
+                    datasets: [{
+                        label: 'Tipos de Instrumentos',
+                        data: [3, 2, 3], // 3 Formative, 2 Summative, 3 Collaborative items as per the prompt
+                        backgroundColor: [
+                            '#0d9488', // Teal-600 (Formativa)
+                            '#1d4ed8', // Blue-700 (Sumativa)
+                            '#b45309'  // Amber-700 (Colaborativa)
+                        ],
+                        borderColor: '#f8fafc', // slate-50
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    size: 14,
+                                    family: 'Inter, sans-serif'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            titleFont: {
+                                size: 16,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 14
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.raw + ' instrumentos';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const chartElement = elements[0];
+                            const index = chartElement.index;
+                            const label = evaluationChart.data.labels[index].toLowerCase();
+                            const cardId = `card-${label}`;
+                            const card = document.getElementById(cardId);
+                            
+                            document.querySelectorAll('[id^="card-"]').forEach(c => {
+                                c.classList.remove('ring-4', 'ring-offset-2');
+                                if(c.id.includes('sumativa')) c.classList.remove('ring-blue-400');
+                                if(c.id.includes('formativa')) c.classList.remove('ring-teal-400');
+                                if(c.id.includes('colaborativa')) c.classList.remove('ring-amber-400');
+                            });
+
+                            if (card) {
+                                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                card.classList.add('ring-4', 'ring-offset-2');
+                                if(label === 'sumativa') card.classList.add('ring-blue-400');
+                                if(label === 'formativa') card.classList.add('ring-teal-400');
+                                if(label === 'colaborativa') card.classList.add('ring-amber-400');
+                            }
+                        }
+                    }
+                }
+            });
+
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.addEventListener('change', (e) => {
+                const target = e.target.value;
+                if (target !== '#') {
+                    window.location.hash = target;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
