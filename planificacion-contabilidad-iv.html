@@ -303,24 +303,48 @@
                     let nombre = 'No especificado';
                     let cedula = 'No especificada';
                     
-                    // Formato con **Nombre:** y **Cédula:**
-                    const nombreMatch1 = body.match(/\*\*Nombre:\*\*\s*(.+)/);
-                    const cedulaMatch1 = body.match(/\*\*Cédula:\*\*\s*(.+)/);
+                    // Patrones para nombre (con y sin acentos, mayúsculas/minúsculas)
+                    const nombrePatterns = [
+                        /\*\*Nombre:\*\*\s*(.+)/i,
+                        /\*\*nombre:\*\*\s*(.+)/i,
+                        /Nombre:\s*(.+)/i,
+                        /nombre:\s*(.+)/i,
+                        /Nombre\s*(.+)/i,
+                        /nombre\s*(.+)/i
+                    ];
                     
-                    // Formato simple con Nombre: y Cédula:
-                    const nombreMatch2 = body.match(/Nombre:\s*(.+)/);
-                    const cedulaMatch2 = body.match(/Cédula:\s*(.+)/);
+                    // Patrones para cédula (con y sin acentos, mayúsculas/minúsculas)
+                    const cedulaPatterns = [
+                        /\*\*Cédula:\*\*\s*(.+)/i,
+                        /\*\*cédula:\*\*\s*(.+)/i,
+                        /\*\*Cedula:\*\*\s*(.+)/i,
+                        /\*\*cedula:\*\*\s*(.+)/i,
+                        /Cédula:\s*(.+)/i,
+                        /cédula:\s*(.+)/i,
+                        /Cedula:\s*(.+)/i,
+                        /cedula:\s*(.+)/i,
+                        /Cédula\s*(.+)/i,
+                        /cédula\s*(.+)/i,
+                        /Cedula\s*(.+)/i,
+                        /cedula\s*(.+)/i
+                    ];
                     
-                    if (nombreMatch1) {
-                        nombre = nombreMatch1[1].trim();
-                    } else if (nombreMatch2) {
-                        nombre = nombreMatch2[1].trim();
+                    // Buscar nombre
+                    for (const pattern of nombrePatterns) {
+                        const match = body.match(pattern);
+                        if (match) {
+                            nombre = match[1].trim();
+                            break;
+                        }
                     }
                     
-                    if (cedulaMatch1) {
-                        cedula = cedulaMatch1[1].trim();
-                    } else if (cedulaMatch2) {
-                        cedula = cedulaMatch2[1].trim();
+                    // Buscar cédula
+                    for (const pattern of cedulaPatterns) {
+                        const match = body.match(pattern);
+                        if (match) {
+                            cedula = match[1].trim();
+                            break;
+                        }
                     }
                     
                     participantesHTML += `
