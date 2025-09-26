@@ -295,11 +295,30 @@
                     
                     // Extraer nombre y cédula del comentario
                     const body = comment.body;
-                    const nombreMatch = body.match(/\*\*Nombre:\*\*\s*(.+)/);
-                    const cedulaMatch = body.match(/\*\*Cédula:\*\*\s*(.+)/);
                     
-                    const nombre = nombreMatch ? nombreMatch[1].trim() : 'No especificado';
-                    const cedula = cedulaMatch ? cedulaMatch[1].trim() : 'No especificada';
+                    // Buscar diferentes formatos de nombre y cédula
+                    let nombre = 'No especificado';
+                    let cedula = 'No especificada';
+                    
+                    // Formato con **Nombre:** y **Cédula:**
+                    const nombreMatch1 = body.match(/\*\*Nombre:\*\*\s*(.+)/);
+                    const cedulaMatch1 = body.match(/\*\*Cédula:\*\*\s*(.+)/);
+                    
+                    // Formato simple con Nombre: y Cédula:
+                    const nombreMatch2 = body.match(/Nombre:\s*(.+)/);
+                    const cedulaMatch2 = body.match(/Cédula:\s*(.+)/);
+                    
+                    if (nombreMatch1) {
+                        nombre = nombreMatch1[1].trim();
+                    } else if (nombreMatch2) {
+                        nombre = nombreMatch2[1].trim();
+                    }
+                    
+                    if (cedulaMatch1) {
+                        cedula = cedulaMatch1[1].trim();
+                    } else if (cedulaMatch2) {
+                        cedula = cedulaMatch2[1].trim();
+                    }
                     
                     participantesHTML += `
                         <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500">
