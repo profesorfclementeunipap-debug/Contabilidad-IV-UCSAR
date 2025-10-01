@@ -5,7 +5,7 @@
     "carrera": "Contaduría Pública",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 0,
         "ponderado": 0,
         "porcentaje": 20
@@ -44,7 +44,7 @@
     "carrera": "Contaduría Pública",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 18,
         "ponderado": 3.6,
         "porcentaje": 20
@@ -83,7 +83,7 @@
     "carrera": "Contaduría Pública",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 18,
         "ponderado": 3.6,
         "porcentaje": 20
@@ -122,7 +122,7 @@
     "carrera": "Administración de Empresas",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 0,
         "ponderado": 0,
         "porcentaje": 20
@@ -161,7 +161,7 @@
     "carrera": "Administración de Empresas",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 0,
         "ponderado": 0,
         "porcentaje": 20
@@ -200,7 +200,7 @@
     "carrera": "Administración de Empresas",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 0,
         "ponderado": 0,
         "porcentaje": 20
@@ -239,7 +239,7 @@
     "carrera": "Administración de Empresas",
     "evaluaciones": [
       {
-        "nombre": "Exposiciones",
+        "nombre": "Informe y Exposición",
         "puntaje": 18,
         "ponderado": 3.6,
         "porcentaje": 20

@@ -27,7 +27,7 @@ async function consultarGoogleSheet(sheetId) {
                 
                 if (cedula && cedula !== '0' && apellidos && nombres) {
                     const evaluaciones = [
-                        { nombre: 'Exposiciones', puntaje: parseFloat(row.c[4]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna E (EVAL 1)
+                        { nombre: 'Informe y Exposición', puntaje: parseFloat(row.c[4]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna E (EVAL 1)
                         { nombre: 'Ejercicios Exposición', puntaje: parseFloat(row.c[6]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna G (EVAL 2)
                         { nombre: 'Ensayos Acumulados', puntaje: parseFloat(row.c[8]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna I (EVAL 3)
                         { nombre: 'Ejercicios Acumulados', puntaje: parseFloat(row.c[10]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna K (EVAL 4)
