@@ -20,18 +20,18 @@ async function consultarGoogleSheet(sheetId) {
         // Procesar filas (saltar encabezados)
         for (let i = 2; i < rows.length; i++) {
             const row = rows[i];
-            if (row.c && row.c.length >= 12) {
+            if (row.c && row.c.length >= 13) {
                 const cedula = row.c[3]?.v?.toString() || '';
                 const apellidos = row.c[1]?.v?.toString() || '';
                 const nombres = row.c[2]?.v?.toString() || '';
                 
                 if (cedula && cedula !== '0' && apellidos && nombres) {
                     const evaluaciones = [
-                        { nombre: 'Exposiciones', puntaje: parseFloat(row.c[4]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna E
-                        { nombre: 'Ejercicios Exposición', puntaje: parseFloat(row.c[6]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna G
-                        { nombre: 'Informes Acumulados', puntaje: parseFloat(row.c[8]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna I
-                        { nombre: 'Ejercicios Acumulados', puntaje: parseFloat(row.c[10]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna K
-                        { nombre: 'Asistencia y Participación', puntaje: parseFloat(row.c[11]?.v) || 0, ponderado: 0, porcentaje: 20 } // Columna L
+                        { nombre: 'Exposiciones', puntaje: parseFloat(row.c[4]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna E (EVAL 1)
+                        { nombre: 'Ejercicios Exposición', puntaje: parseFloat(row.c[6]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna G (EVAL 2)
+                        { nombre: 'Informes Acumulados', puntaje: parseFloat(row.c[8]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna I (EVAL 3)
+                        { nombre: 'Ejercicios Acumulados', puntaje: parseFloat(row.c[10]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna K (EVAL 4)
+                        { nombre: 'Asistencia y Participación', puntaje: parseFloat(row.c[12]?.v) || 0, ponderado: 0, porcentaje: 20 } // Columna M (EVAL 5)
                     ];
                     
                     // Calcular ponderados
