@@ -1,0 +1,36 @@
+name: Actualizar Calificaciones desde Google Sheets
+
+on:
+  schedule:
+    # Ejecutar cada 30 minutos
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Permitir ejecución manual
+
+jobs:
+  update-grades:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Instalar dependencias
+      run: |
+        npm init -y
+        npm install node-fetch
+        
+    - name: Actualizar calificaciones
+      run: node update-grades.js
+      
+    - name: Commit cambios
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add assets/data/calificaciones.json
+        git diff --staged --quiet || git commit -m "Actualizar calificaciones desde Google Sheets [skip ci]"
+        git push
