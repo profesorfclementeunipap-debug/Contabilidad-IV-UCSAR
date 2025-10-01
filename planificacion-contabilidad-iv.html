@@ -50,6 +50,7 @@
                     <a href="#contenido" class="text-slate-600 hover:text-blue-600 transition">Contenido Práctico</a>
                     <a href="#evaluacion" class="text-slate-600 hover:text-blue-600 transition">Evaluación</a>
                     <a href="#registro" class="text-slate-600 hover:text-blue-600 transition">Registro</a>
+                    <a href="#material-apoyo" class="text-slate-600 hover:text-blue-600 transition">Material de Apoyo</a>
                     <a href="#recursos" class="text-slate-600 hover:text-blue-600 transition">Recursos</a>
                 </div>
                 <div class="md:hidden">
@@ -59,6 +60,7 @@
                         <option value="#contenido">Contenido Práctico</option>
                         <option value="#evaluacion">Evaluación</option>
                         <option value="#registro">Registro</option>
+                        <option value="#material-apoyo">Material de Apoyo</option>
                         <option value="#recursos">Recursos</option>
                     </select>
                 </div>
@@ -235,6 +237,99 @@
             </div>
         </section>
 
+        <!-- Material de Apoyo del Tema I -->
+        <section id="material-apoyo" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Material de Apoyo del Tema I</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                            <span class="text-2xl">📁</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800 mb-2">Recursos Digitales</h3>
+                        <p class="text-slate-600">Accede a todos los materiales de apoyo para el Tema 1: Consignaciones y Comisiones</p>
+                    </div>
+                    
+                    <!-- Videos -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">🎥</span>
+                            Videos Explicativos
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-slate-700 mb-2">Contabilidad de Consignaciones</h5>
+                                <p class="text-sm text-slate-600 mb-3">Video explicativo completo del tema</p>
+                                <a href="assets/videos/Contabilidad_de_Consignaciones.mp4" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors">
+                                    <span class="mr-2">▶️</span>
+                                    Ver Video
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ejercicios -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">📊</span>
+                            Ejercicios Prácticos
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-slate-700 mb-2">Ejercicios de la Exposición</h5>
+                                <p class="text-sm text-slate-600 mb-3">Archivo Excel con ejercicios del Tema 1</p>
+                                <a href="assets/ejercicios/Ejercicios de la Exposicion Tema 1.xlsx" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 transition-colors">
+                                    <span class="mr-2">📥</span>
+                                    Descargar Excel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentos -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">📄</span>
+                            Documentos y Informes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-slate-700 mb-2">Informe Contabilidad IV</h5>
+                                <p class="text-sm text-slate-600 mb-3">Documento completo del informe</p>
+                                <a href="assets/documentos/Informe contabilidad IV-1.docx" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition-colors">
+                                    <span class="mr-2">📄</span>
+                                    Ver Documento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Galería de Imágenes -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">🖼️</span>
+                            Imágenes del Libro de Texto
+                        </h4>
+                        <p class="text-slate-600 mb-4">Páginas del libro de texto sobre consignaciones</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galeria-imagenes">
+                            <!-- Las imágenes se cargarán dinámicamente -->
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="mostrarTodasLasImagenes()" class="text-blue-600 hover:text-blue-800 underline">
+                                Ver todas las imágenes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="recursos" class="mb-16 scroll-mt-20">
             <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Recursos y Herramientas</h2>
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -376,9 +471,109 @@
             }
         }
 
+        // Función para cargar la galería de imágenes
+        function cargarGaleriaImagenes() {
+            const galeria = document.getElementById('galeria-imagenes');
+            const imagenes = [
+                'assets/imagenes/Libro - Consignación 1.jpg',
+                'assets/imagenes/Libro - Consignación 2.jpg',
+                'assets/imagenes/Libro - Consignación 3.jpg',
+                'assets/imagenes/Libro - Consignación 4.jpg',
+                'assets/imagenes/Libro - Consignación 5.jpg',
+                'assets/imagenes/Libro - Consignación 6.jpg',
+                'assets/imagenes/Libro - Consignación 7.jpg',
+                'assets/imagenes/Libro - Consignación 8.jpg',
+                'assets/imagenes/Libro - Consignación 9.jpg',
+                'assets/imagenes/Libro - Consignación 10.jpg',
+                'assets/imagenes/Libro - Consignación 11.jpg',
+                'assets/imagenes/Libro - Consignación 13.jpg',
+                'assets/imagenes/Libro - Consignación 14.jpg',
+                'assets/imagenes/Libro - Consignación 15.jpg'
+            ];
+
+            // Mostrar solo las primeras 8 imágenes inicialmente
+            const imagenesIniciales = imagenes.slice(0, 8);
+            let galeriaHTML = '';
+
+            imagenesIniciales.forEach((imagen, index) => {
+                const numero = index + 1;
+                galeriaHTML += `
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" 
+                         onclick="abrirImagen('${imagen}', ${numero})">
+                        <img src="${imagen}" 
+                             alt="Libro Consignación ${numero}" 
+                             class="w-full h-32 object-cover">
+                        <div class="p-2 text-center">
+                            <p class="text-sm font-medium text-slate-700">Página ${numero}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            galeria.innerHTML = galeriaHTML;
+        }
+
+        // Función para mostrar todas las imágenes
+        function mostrarTodasLasImagenes() {
+            const galeria = document.getElementById('galeria-imagenes');
+            const imagenes = [
+                'assets/imagenes/Libro - Consignación 1.jpg',
+                'assets/imagenes/Libro - Consignación 2.jpg',
+                'assets/imagenes/Libro - Consignación 3.jpg',
+                'assets/imagenes/Libro - Consignación 4.jpg',
+                'assets/imagenes/Libro - Consignación 5.jpg',
+                'assets/imagenes/Libro - Consignación 6.jpg',
+                'assets/imagenes/Libro - Consignación 7.jpg',
+                'assets/imagenes/Libro - Consignación 8.jpg',
+                'assets/imagenes/Libro - Consignación 9.jpg',
+                'assets/imagenes/Libro - Consignación 10.jpg',
+                'assets/imagenes/Libro - Consignación 11.jpg',
+                'assets/imagenes/Libro - Consignación 13.jpg',
+                'assets/imagenes/Libro - Consignación 14.jpg',
+                'assets/imagenes/Libro - Consignación 15.jpg'
+            ];
+
+            let galeriaHTML = '';
+            imagenes.forEach((imagen, index) => {
+                const numero = index + 1;
+                galeriaHTML += `
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" 
+                         onclick="abrirImagen('${imagen}', ${numero})">
+                        <img src="${imagen}" 
+                             alt="Libro Consignación ${numero}" 
+                             class="w-full h-32 object-cover">
+                        <div class="p-2 text-center">
+                            <p class="text-sm font-medium text-slate-700">Página ${numero}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            galeria.innerHTML = galeriaHTML;
+        }
+
+        // Función para abrir imagen en modal
+        function abrirImagen(src, numero) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg max-w-4xl max-h-full p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Página ${numero} - Libro de Consignaciones</h3>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    <img src="${src}" alt="Libro Consignación ${numero}" class="max-w-full max-h-96 object-contain">
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Cargar participantes al cargar la página
             cargarParticipantes();
+            // Cargar galería de imágenes
+            cargarGaleriaImagenes();
             const ctx = document.getElementById('evaluationChart').getContext('2d');
             const evaluationChart = new Chart(ctx, {
                 type: 'doughnut',
