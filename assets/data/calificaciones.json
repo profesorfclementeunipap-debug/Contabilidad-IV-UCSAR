@@ -1,0 +1,58 @@
+[
+  {
+    "cedula": "32054913",
+    "nombre": "MARIANGEL JOSE ALBARRAN MONTILLA",
+    "carrera": "Contaduría Pública",
+    "evaluaciones": [
+      { "nombre": "EVAL 1", "puntaje": 18, "ponderado": 3.6, "porcentaje": 20 },
+      { "nombre": "EVAL 2", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 3", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 4", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 5", "puntaje": 0, "ponderado": 0, "porcentaje": 20 }
+    ],
+    "definitiva": 3.6,
+    "estado": "En progreso"
+  },
+  {
+    "cedula": "31191557",
+    "nombre": "ELIMAR FLORANGEL MORALES GOYO",
+    "carrera": "Contaduría Pública",
+    "evaluaciones": [
+      { "nombre": "EVAL 1", "puntaje": 18, "ponderado": 3.6, "porcentaje": 20 },
+      { "nombre": "EVAL 2", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 3", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 4", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 5", "puntaje": 0, "ponderado": 0, "porcentaje": 20 }
+    ],
+    "definitiva": 3.6,
+    "estado": "En progreso"
+  },
+  {
+    "cedula": "30720049",
+    "nombre": "MANUEL ALEJANDRO SUAREZ CEDEÑO",
+    "carrera": "Administración de Empresas",
+    "evaluaciones": [
+      { "nombre": "EVAL 1", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 2", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 3", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 4", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 5", "puntaje": 0, "ponderado": 0, "porcentaje": 20 }
+    ],
+    "definitiva": 0,
+    "estado": "Sin calificaciones"
+  },
+  {
+    "cedula": "28307516",
+    "nombre": "GABRIEL DAVID CANDEO AZUAJE",
+    "carrera": "Contaduría Pública",
+    "evaluaciones": [
+      { "nombre": "EVAL 1", "puntaje": 18, "ponderado": 3.6, "porcentaje": 20 },
+      { "nombre": "EVAL 2", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 3", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 4", "puntaje": 0, "ponderado": 0, "porcentaje": 20 },
+      { "nombre": "EVAL 5", "puntaje": 0, "ponderado": 0, "porcentaje": 20 }
+    ],
+    "definitiva": 3.6,
+    "estado": "En progreso"
+  }
+]
