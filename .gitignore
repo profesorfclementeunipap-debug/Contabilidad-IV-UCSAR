@@ -1,0 +1,60 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Archivos de configuración del usuario
+.bash_history
+.bash_profile
+.bashrc
+.git-credentials
+.gitconfig
+.lesshst
+
+# Directorios de aplicaciones
+.codegpt/
+.codeium/
+.crossnote/
+.cursor/
+.dbclient/
+.docker/
+.dotnet/
+.gemini/
+.gradle/
+.m2/
+.redhat/
+.sts4/
+.vscode/
+
+# Archivos de Windows
+NTUSER.DAT*
+ntuser.dat*
+ntuser.ini
+AppData/
+Contacts/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Saved Games/
+Searches/
+
+# Archivos de OneDrive
+OneDrive/
+
+# Archivos de configuración local
+.angular-config.json
+.h2.server.properties
+
+# Archivos SQL de respaldo
+*.sql
+
+# Directorios de proyectos externos
+Preparacion_archivo_Exportar_SQL/
+Requirement_project/
+SIGESP_GRAN_SABANA/
+aprendiendo_python_git/
+source/
