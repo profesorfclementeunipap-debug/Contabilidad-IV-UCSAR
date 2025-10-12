@@ -52,6 +52,7 @@
                     <a href="#ejercicios" class="text-slate-600 hover:text-blue-600 transition">Ejercicios</a>
                     <a href="#evaluacion" class="text-slate-600 hover:text-blue-600 transition">Evaluación</a>
                     <a href="#registro" class="text-slate-600 hover:text-blue-600 transition">Registro</a>
+                    <a href="#material-apoyo" class="text-slate-600 hover:text-blue-600 transition">Material de Apoyo</a>
                     <a href="#recursos" class="text-slate-600 hover:text-blue-600 transition">Recursos</a>
                 </div>
                 <div class="md:hidden">
@@ -62,6 +63,7 @@
                         <option value="#ejercicios">Ejercicios</option>
                         <option value="#evaluacion">Evaluación</option>
                         <option value="#registro">Registro</option>
+                        <option value="#material-apoyo">Material de Apoyo</option>
                         <option value="#recursos">Recursos</option>
                     </select>
                 </div>
@@ -233,6 +235,79 @@
             </div>
         </section>
 
+        <!-- Material de Apoyo del Tema 2 -->
+        <section id="material-apoyo" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Material de Apoyo del Tema 2</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                            <span class="text-2xl">📁</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800 mb-2">Recursos Digitales</h3>
+                        <p class="text-slate-600">Accede a todos los materiales de apoyo para el Tema 2: Ventas a Plazo</p>
+                    </div>
+
+                    <!-- Ejercicios -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">📊</span>
+                            Ejercicios Prácticos
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-slate-700 mb-2">Ejercicio para Exposición - Grupo 2</h5>
+                                <p class="text-sm text-slate-600 mb-3">Archivo Excel con ejercicios de Ventas a Plazo</p>
+                                <a href="assets/ejercicios/tema2/VENTA A PLAZO Ejercicio para Expo- Grupo 2.xlsx" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 transition-colors">
+                                    <span class="mr-2">📥</span>
+                                    Descargar Excel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentos -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">📄</span>
+                            Documentos e Informes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-slate-700 mb-2">Informe Contabilidad 4 - Temas 2 y 3</h5>
+                                <p class="text-sm text-slate-600 mb-3">Documento completo del informe académico</p>
+                                <a href="assets/documentos/tema2/Informe Contabilidad 4 tema 2-3.docx" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition-colors">
+                                    <span class="mr-2">📄</span>
+                                    Ver Documento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Galería de Imágenes -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-slate-800 mb-4 flex items-center">
+                            <span class="mr-3 text-2xl">🖼️</span>
+                            Imágenes del Libro de Texto
+                        </h4>
+                        <p class="text-slate-600 mb-4">Páginas del libro de texto sobre Ventas a Plazo (páginas 1031-1052)</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galeria-imagenes">
+                            <!-- Las imágenes se cargarán dinámicamente -->
+                        </div>
+                        <div class="text-center mt-4">
+                            <button onclick="mostrarTodasLasImagenes()" class="text-blue-600 hover:text-blue-800 underline">
+                                Ver todas las imágenes (22 páginas)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="recursos" class="scroll-mt-20">
             <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Recursos y Herramientas</h2>
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -373,9 +448,125 @@
             }
         }
 
+        // Función para cargar la galería de imágenes
+        function cargarGaleriaImagenes() {
+            const galeria = document.getElementById('galeria-imagenes');
+            const imagenes = [
+                'assets/imagenes/tema2/Pag 1031 .jpg',
+                'assets/imagenes/tema2/pag 1032.jpg',
+                'assets/imagenes/tema2/pag 1033.jpg',
+                'assets/imagenes/tema2/pag 1034.jpg',
+                'assets/imagenes/tema2/pag 1035.jpg',
+                'assets/imagenes/tema2/pag 1036.jpg',
+                'assets/imagenes/tema2/pag 1037.jpg',
+                'assets/imagenes/tema2/pag 1038.jpg',
+                'assets/imagenes/tema2/pag 1039.jpg',
+                'assets/imagenes/tema2/pag 1040.jpg',
+                'assets/imagenes/tema2/pag 1041.jpg',
+                'assets/imagenes/tema2/pag 1042.jpg',
+                'assets/imagenes/tema2/pag 1043.jpg',
+                'assets/imagenes/tema2/pag 1044.jpg',
+                'assets/imagenes/tema2/pag 1045.jpg',
+                'assets/imagenes/tema2/pag 1046.jpg',
+                'assets/imagenes/tema2/pag 1047.jpg',
+                'assets/imagenes/tema2/pag 1048.jpg',
+                'assets/imagenes/tema2/pag 1049.jpg',
+                'assets/imagenes/tema2/pag 1050.jpg',
+                'assets/imagenes/tema2/pag 1051.jpg',
+                'assets/imagenes/tema2/pag 1052.jpg'
+            ];
+
+            // Mostrar solo las primeras 8 imágenes inicialmente
+            const imagenesIniciales = imagenes.slice(0, 8);
+            let galeriaHTML = '';
+
+            imagenesIniciales.forEach((imagen, index) => {
+                const numero = 1031 + index;
+                galeriaHTML += `
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" 
+                         onclick="abrirImagen('${imagen}', ${numero})">
+                        <img src="${imagen}" 
+                             alt="Página ${numero}" 
+                             class="w-full h-32 object-cover">
+                        <div class="p-2 text-center">
+                            <p class="text-sm font-medium text-slate-700">Página ${numero}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            galeria.innerHTML = galeriaHTML;
+        }
+
+        // Función para mostrar todas las imágenes
+        function mostrarTodasLasImagenes() {
+            const galeria = document.getElementById('galeria-imagenes');
+            const imagenes = [
+                'assets/imagenes/tema2/Pag 1031 .jpg',
+                'assets/imagenes/tema2/pag 1032.jpg',
+                'assets/imagenes/tema2/pag 1033.jpg',
+                'assets/imagenes/tema2/pag 1034.jpg',
+                'assets/imagenes/tema2/pag 1035.jpg',
+                'assets/imagenes/tema2/pag 1036.jpg',
+                'assets/imagenes/tema2/pag 1037.jpg',
+                'assets/imagenes/tema2/pag 1038.jpg',
+                'assets/imagenes/tema2/pag 1039.jpg',
+                'assets/imagenes/tema2/pag 1040.jpg',
+                'assets/imagenes/tema2/pag 1041.jpg',
+                'assets/imagenes/tema2/pag 1042.jpg',
+                'assets/imagenes/tema2/pag 1043.jpg',
+                'assets/imagenes/tema2/pag 1044.jpg',
+                'assets/imagenes/tema2/pag 1045.jpg',
+                'assets/imagenes/tema2/pag 1046.jpg',
+                'assets/imagenes/tema2/pag 1047.jpg',
+                'assets/imagenes/tema2/pag 1048.jpg',
+                'assets/imagenes/tema2/pag 1049.jpg',
+                'assets/imagenes/tema2/pag 1050.jpg',
+                'assets/imagenes/tema2/pag 1051.jpg',
+                'assets/imagenes/tema2/pag 1052.jpg'
+            ];
+
+            let galeriaHTML = '';
+            imagenes.forEach((imagen, index) => {
+                const numero = 1031 + index;
+                galeriaHTML += `
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" 
+                         onclick="abrirImagen('${imagen}', ${numero})">
+                        <img src="${imagen}" 
+                             alt="Página ${numero}" 
+                             class="w-full h-32 object-cover">
+                        <div class="p-2 text-center">
+                            <p class="text-sm font-medium text-slate-700">Página ${numero}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            galeria.innerHTML = galeriaHTML;
+        }
+
+        // Función para abrir imagen en modal
+        function abrirImagen(src, numero) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg max-w-4xl max-h-full p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Página ${numero} - Ventas a Plazo</h3>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    <img src="${src}" alt="Página ${numero}" class="max-w-full max-h-96 object-contain">
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // Cargar participantes al cargar la página
             cargarParticipantes();
+            // Cargar galería de imágenes
+            cargarGaleriaImagenes();
             const ctx = document.getElementById('evaluationChart').getContext('2d');
             const evaluationChart = new Chart(ctx, {
                 type: 'doughnut',
