@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /Planificacion de la catedra.xlsx
+Disallow: /*.xlsx
+Disallow: /*.docx
+Disallow: /*.pdf
+Disallow: /.git/
+Disallow: /.gitignore
+Allow: /index.html
+Allow: /*.html
+Allow: /assets/

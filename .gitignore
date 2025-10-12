@@ -1,0 +1,20 @@
+# Archivos del sistema
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.temp
+*~
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Archivos de log
+*.log
+
+# Archivos de configuración local
+.env
+.env.local

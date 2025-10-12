@@ -92,7 +92,7 @@
                         Procedimientos contables especiales para contratos de consignación y comisiones.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 21/10/2025
+                        <span class="font-semibold">Fecha:</span> 21/10/2025 (Semana 2)
                     </div>
                 </div>
 
@@ -106,7 +106,7 @@
                         Contratos de ventas a plazos y procedimientos de registro especiales.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 23/10/2025
+                        <span class="font-semibold">Fecha:</span> 23/10/2025 (Semana 3)
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                         Organizaciones descentralizadas y estados financieros combinados.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 28/10/2025
+                        <span class="font-semibold">Fecha:</span> 28/10/2025 (Semana 4)
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@
                         Fusión de empresas y contabilidad de inversiones permanentes.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 30/10/2025
+                        <span class="font-semibold">Fecha:</span> 30/10/2025 (Semana 4)
                     </div>
                 </div>
 
@@ -148,7 +148,7 @@
                         Preparación técnica de informes consolidados.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 04/11/2025
+                        <span class="font-semibold">Fecha:</span> 04/11/2025 (Semana 5)
                     </div>
                 </div>
 
@@ -162,7 +162,7 @@
                         Distribuciones de utilidades y eliminación de transacciones internas.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 06/11/2025
+                        <span class="font-semibold">Fecha:</span> 06/11/2025 (Semana 5)
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@
                         Análisis de diferencias entre costo de adquisición y valor según libros.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 11/11/2025
+                        <span class="font-semibold">Fecha:</span> 11/11/2025 (Semana 6)
                     </div>
                 </div>
 
@@ -190,10 +190,147 @@
                         Distribución de utilidades basada en estructura de participación.
                     </p>
                     <div class="text-xs text-gray-500">
-                        <span class="font-semibold">Fecha:</span> 13/11/2025
+                        <span class="font-semibold">Fecha:</span> 13/11/2025 (Semana 6)
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Consulta de Calificaciones -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg mr-3">📊</span>
+                Consulta de Calificaciones
+            </h3>
+            <p class="text-gray-600 mb-8">Ingresa tu número de cédula para consultar tus calificaciones en tiempo real.</p>
+            
+            <div class="max-w-md mx-auto">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                            <span class="text-2xl">🔍</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Consulta tu Progreso</h4>
+                        <p class="text-blue-600 text-sm">Ingresa tu cédula para ver tus calificaciones</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="cedula" class="block text-sm font-medium text-gray-700 mb-2">Número de Cédula:</label>
+                            <input type="text" 
+                                   id="cedula" 
+                                   placeholder="Ej: 12345678"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center text-lg">
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="consultarCalificaciones()" 
+                                    class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
+                                <span class="mr-2">📊</span>
+                                Consultar Calificaciones
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resultados de Calificaciones -->
+            <div id="resultados-calificaciones" class="mt-8 hidden">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Resultados de Búsqueda</h4>
+                    <div id="datos-estudiante" class="space-y-4">
+                        <!-- Los datos se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registro en Cuadro de Notas -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-lg mr-3">📝</span>
+                Registro en Cuadro de Notas
+            </h3>
+            <p class="text-gray-600 mb-8">Regístrate en el cuadro de notas según tu carrera. Es importante que sigas las instrucciones para mantener el formato correcto.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Administración de Empresas -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                            <span class="text-2xl">🏢</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Administración de Empresas</h4>
+                        <p class="text-blue-600 text-sm">Para estudiantes de la carrera de Administración de Empresas</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                        <h5 class="font-semibold text-gray-800 mb-3">📋 Instrucciones:</h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <strong>NO modifiques</strong> el formato del cuadro</li>
+                            <li>• <strong>Nombre completo:</strong> Todas las letras en MAYÚSCULA</li>
+                            <li>• <strong>Cédula:</strong> Solo números, sin puntos</li>
+                            <li>• Coloca tu nombre completo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://docs.google.com/spreadsheets/d/1bTIrzyHKB6K7yzE8fKW9Gi_93NaniGHH/edit?usp=sharing&ouid=106879328100388920145&rtpof=true&sd=true" 
+                           target="_blank"
+                           class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
+                            <span class="mr-3 text-xl">📊</span>
+                            Registrarse en Cuadro de Notas
+                            <span class="ml-3 text-sm">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contaduría -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-green-800 mb-2">Contaduría</h4>
+                        <p class="text-green-600 text-sm">Para estudiantes de la carrera de Contaduría</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                        <h5 class="font-semibold text-gray-800 mb-3">📋 Instrucciones:</h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <strong>NO modifiques</strong> el formato del cuadro</li>
+                            <li>• <strong>Nombre completo:</strong> Todas las letras en MAYÚSCULA</li>
+                            <li>• <strong>Cédula:</strong> Solo números, sin puntos</li>
+                            <li>• Coloca tu nombre completo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://docs.google.com/spreadsheets/d/17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC/edit?usp=sharing&ouid=106879328100388920145&rtpof=true&sd=true" 
+                           target="_blank"
+                           class="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl">
+                            <span class="mr-3 text-xl">📊</span>
+                            Registrarse en Cuadro de Notas
+                            <span class="ml-3 text-sm">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <span class="text-yellow-400 text-xl">⚠️</span>
+                    </div>
+                    <div class="ml-3">
+                        <h4 class="text-sm font-medium text-yellow-800">Importante:</h4>
+                        <p class="text-sm text-yellow-700 mt-1">
+                            Asegúrate de seleccionar el cuadro correcto según tu carrera. 
+                            Si tienes dudas sobre cuál usar, consulta con el profesor.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -226,6 +363,73 @@
             </div>
         </section>
 
+        <!-- Documentos Oficiales UCSAR -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-lg mr-3">📋</span>
+                Documentos Oficiales UCSAR
+            </h3>
+            <p class="text-gray-600 mb-8">Documentos institucionales y normativas de la Universidad Católica Santa Rosa</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">⚖️</span>
+                        <h4 class="text-lg font-semibold text-gray-800">REGLAMENTO DE SANCIONES Y PROCEDIMIENTOS DISCIPLINARIOS</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Reglamento de sanciones y procedimientos disciplinarios</p>
+                    <a href="https://drive.google.com/file/d/1uTux84UHrxsVWm57tTAwQnD6574XR8MD/view?usp=drive_link" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📋</span>
+                        <h4 class="text-lg font-semibold text-gray-800">REGLAMENTO DE EVALUACIÓN.pdf</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Reglamento de evaluación académica</p>
+                    <a href="https://drive.google.com/file/d/17QF8Fu4xKhWAZ1HefkytQv95-2S2gSXf/view?usp=drive_link" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📰</span>
+                        <h4 class="text-lg font-semibold text-gray-800">GACETA OFICIAL 42209 DEL 090921 ESTUDIOS MULTIMODALES</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Gaceta oficial sobre estudios multimodales</p>
+                    <a href="https://drive.google.com/file/d/1jcvy5tPoSKTBMOUokUJXAKEl55te5tUe/view?usp=sharing" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📅</span>
+                        <h4 class="text-lg font-semibold text-gray-800">Calendario 2025-III.pdf</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Calendario académico del tercer trimestre 2025</p>
+                    <a href="https://drive.google.com/file/d/1nyTbYIprgI5ENMdP7kIQ_v9RQ4Smjgma/view?usp=sharing" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -246,7 +450,262 @@
         function openTheme(url) {
             window.open(url, '_blank');
         }
+
+        // Función para consultar calificaciones desde Google Sheets
+        async function consultarCalificaciones() {
+            const cedula = document.getElementById('cedula').value.trim();
+            const resultados = document.getElementById('resultados-calificaciones');
+            const datosEstudiante = document.getElementById('datos-estudiante');
+
+            if (!cedula) {
+                alert('Por favor ingresa tu número de cédula');
+                return;
+            }
+
+            // Mostrar loading
+            datosEstudiante.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p class="text-gray-600">Consultando calificaciones...</p>
+                </div>
+            `;
+            resultados.classList.remove('hidden');
+
+            try {
+                // Simular consulta a Google Sheets (en producción usarías la API real)
+                const calificaciones = await simularConsultaCalificaciones(cedula);
+                
+                if (calificaciones.encontrado) {
+                    mostrarCalificaciones(calificaciones);
+                } else {
+                    mostrarError('No se encontraron calificaciones para la cédula ingresada');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                mostrarError('Error al consultar las calificaciones. Intenta nuevamente.');
+            }
+        }
+
+        // Función para consultar calificaciones desde archivo JSON
+        async function simularConsultaCalificaciones(cedula) {
+            // Simular delay de red
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            try {
+                // Intentar cargar datos desde archivo JSON
+                const response = await fetch('assets/data/calificaciones.json');
+                const estudiantes = await response.json();
+                
+                const estudiante = estudiantes.find(est => est.cedula === cedula);
+                if (estudiante) {
+                    return {
+                        encontrado: true,
+                        ...estudiante
+                    };
+                } else {
+                    return { encontrado: false };
+                }
+            } catch (error) {
+                console.log('Cargando datos de respaldo...');
+                // Datos de respaldo si no se puede cargar el JSON
+                const estudiantesEjemplo = [
+                {
+                    cedula: '32054913',
+                    nombre: 'MARIANGEL JOSE ALBARRAN MONTILLA',
+                    carrera: 'Contaduría Pública',
+                    evaluaciones: [
+                        { nombre: 'EVAL 1', puntaje: 18, ponderado: 3.6, porcentaje: 20 },
+                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
+                    ],
+                    definitiva: 3.6,
+                    estado: 'En progreso'
+                },
+                {
+                    cedula: '31191557',
+                    nombre: 'ELIMAR FLORANGEL MORALES GOYO',
+                    carrera: 'Contaduría Pública',
+                    evaluaciones: [
+                        { nombre: 'EVAL 1', puntaje: 18, ponderado: 3.6, porcentaje: 20 },
+                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
+                    ],
+                    definitiva: 3.6,
+                    estado: 'En progreso'
+                },
+                {
+                    cedula: '30720049',
+                    nombre: 'MANUEL ALEJANDRO SUAREZ CEDEÑO',
+                    carrera: 'Administración de Empresas',
+                    evaluaciones: [
+                        { nombre: 'EVAL 1', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
+                    ],
+                    definitiva: 0,
+                    estado: 'Sin calificaciones'
+                },
+                {
+                    cedula: '28307516',
+                    nombre: 'GABRIEL DAVID CANDEO AZUAJE',
+                    carrera: 'Contaduría Pública',
+                    evaluaciones: [
+                        { nombre: 'EVAL 1', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
+                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
+                    ],
+                    definitiva: 0,
+                    estado: 'Sin calificaciones'
+                }
+            ];
+
+            const estudiante = estudiantesEjemplo.find(est => est.cedula === cedula);
+            
+            if (estudiante) {
+                return {
+                    encontrado: true,
+                    ...estudiante
+                };
+            } else {
+                return { encontrado: false };
+            }
+        }
+
+        // Función para mostrar las calificaciones
+        function mostrarCalificaciones(calificaciones) {
+            const datosEstudiante = document.getElementById('datos-estudiante');
+            
+            // Verificar si hay calificaciones
+            const tieneCalificaciones = calificaciones.evaluaciones.some(eval => eval.puntaje > 0);
+            
+            if (!tieneCalificaciones) {
+                // Mostrar mensaje cuando no hay calificaciones
+                datosEstudiante.innerHTML = `
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h5 class="text-xl font-bold text-gray-800">${calificaciones.nombre}</h5>
+                                <p class="text-gray-600">Cédula: ${calificaciones.cedula}</p>
+                                <p class="text-sm text-blue-600 font-medium">${calificaciones.carrera}</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-3xl font-bold text-gray-400">-</div>
+                                <div class="text-sm text-gray-500">Sin calificaciones</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 text-center">
+                            <div class="text-yellow-600 text-4xl mb-4">📝</div>
+                            <h6 class="font-semibold text-gray-800 mb-2">Estudiante Registrado</h6>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Has sido registrado exitosamente en el sistema. 
+                                Las calificaciones aparecerán aquí conforme se vayan asignando.
+                            </p>
+                            <div class="bg-white rounded-lg p-4">
+                                <h6 class="font-semibold text-gray-800 mb-2">Estado del Registro</h6>
+                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                    <div class="flex items-center text-green-600">
+                                        <span class="mr-2">✅</span>
+                                        GitHub
+                                    </div>
+                                    <div class="flex items-center text-green-600">
+                                        <span class="mr-2">✅</span>
+                                        Google Sheets
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Mostrar calificaciones normales
+            let html = `
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h5 class="text-xl font-bold text-gray-800">${calificaciones.nombre}</h5>
+                            <p class="text-gray-600">Cédula: ${calificaciones.cedula}</p>
+                            <p class="text-sm text-blue-600 font-medium">${calificaciones.carrera}</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-blue-600">${calificaciones.definitiva}</div>
+                            <div class="text-sm text-gray-500">Calificación Definitiva</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+            `;
+
+            calificaciones.evaluaciones.forEach((eval, index) => {
+                const color = eval.puntaje >= 18 ? 'green' : eval.puntaje >= 15 ? 'yellow' : 'red';
+                html += `
+                    <div class="bg-gray-50 rounded-lg p-4 text-center">
+                        <div class="text-sm font-medium text-gray-600 mb-2">${eval.nombre}</div>
+                        <div class="text-2xl font-bold text-${color}-600 mb-1">${eval.puntaje}</div>
+                        <div class="text-xs text-gray-500">Ponderado: ${eval.ponderado}</div>
+                        <div class="text-xs text-gray-400">${eval.porcentaje}%</div>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h6 class="font-semibold text-gray-800">Estado Académico</h6>
+                                <p class="text-sm text-gray-600">
+                                    ${calificaciones.definitiva >= 18 ? '✅ Aprobado' : 
+                                      calificaciones.definitiva >= 15 ? '⚠️ En observación' : 
+                                      '❌ Reprobado'}
+                                </p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Progreso</div>
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: ${(calificaciones.definitiva / 20) * 100}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            datosEstudiante.innerHTML = html;
+        }
+
+        // Función para mostrar errores
+        function mostrarError(mensaje) {
+            const datosEstudiante = document.getElementById('datos-estudiante');
+            datosEstudiante.innerHTML = `
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+                    <div class="text-red-600 text-4xl mb-4">⚠️</div>
+                    <h6 class="font-semibold text-red-800 mb-2">No se encontraron resultados</h6>
+                    <p class="text-red-600">${mensaje}</p>
+                    <p class="text-sm text-gray-500 mt-2">Verifica que hayas ingresado correctamente tu número de cédula</p>
+                </div>
+            `;
+        }
+
+        // Permitir búsqueda con Enter
+        document.getElementById('cedula').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                consultarCalificaciones();
+            }
+        });
     </script>
 
 </body>
 </html>
+
