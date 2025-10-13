@@ -490,35 +490,21 @@
                 return;
             }
 
-            // Mostrar loading inicial
+            // Mostrar loading
             datosEstudiante.innerHTML = `
                 <div class="text-center py-8">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                    <p class="text-gray-600">Actualizando datos y consultando calificaciones...</p>
+                    <p class="text-gray-600">Consultando calificaciones desde Google Sheets...</p>
                 </div>
             `;
             resultados.classList.remove('hidden');
 
             try {
-                // Intentar activar la acción de GitHub para obtener datos actualizados
-                await triggerGitHubAction();
+                // Consultar desde Google Sheets y actualizar calificaciones.json
+                const calificacionesActualizadas = await consultarGoogleSheetsYActualizar(cedula);
                 
-                // Esperar un momento para que la acción se procese
-                await new Promise(resolve => setTimeout(resolve, 3000));
-                
-                // Actualizar el mensaje de loading
-                datosEstudiante.innerHTML = `
-                    <div class="text-center py-8">
-                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                        <p class="text-gray-600">Consultando calificaciones actualizadas...</p>
-                    </div>
-                `;
-                
-                // Consultar las calificaciones
-                const calificaciones = await simularConsultaCalificaciones(cedula);
-                
-                if (calificaciones.encontrado) {
-                    mostrarCalificaciones(calificaciones);
+                if (calificacionesActualizadas) {
+                    mostrarCalificaciones(calificacionesActualizadas);
                 } else {
                     mostrarError('No se encontraron calificaciones para la cédula ingresada');
                 }
@@ -528,98 +514,111 @@
             }
         }
 
-        // Función para consultar calificaciones desde archivo JSON
-        async function simularConsultaCalificaciones(cedula) {
-            // Simular delay de red
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
+        async function consultarGoogleSheetsYActualizar(cedula) {
             try {
-                // Intentar cargar datos desde archivo JSON
-                const response = await fetch('assets/data/calificaciones.json');
-                const estudiantes = await response.json();
+                // Consultar Google Sheets de Contaduría Pública
+                const contaduriaData = await consultarGoogleSheet('17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC');
                 
-                const estudiante = estudiantes.find(est => est.cedula === cedula);
+                // Consultar Google Sheets de Administración de Empresas
+                const administracionData = await consultarGoogleSheet('1bTIrzyHKB6K7yzE8fKW9Gi_93NaniGHH');
+                
+                // Combinar datos de ambas hojas
+                const todosLosEstudiantes = [...contaduriaData, ...administracionData];
+                
+                // Buscar el estudiante por cédula
+                const estudiante = todosLosEstudiantes.find(est => est.cedula === cedula);
+                
                 if (estudiante) {
-                    return {
-                        encontrado: true,
-                        ...estudiante
-                    };
-                } else {
-                    return { encontrado: false };
+                    // Actualizar el archivo calificaciones.json
+                    await actualizarCalificacionesJSON(todosLosEstudiantes);
+                    return estudiante;
                 }
+                
+                return null;
             } catch (error) {
-                console.log('Cargando datos de respaldo...');
-                // Datos de respaldo si no se puede cargar el JSON
-                const estudiantesEjemplo = [
-                {
-                    cedula: '32054913',
-                    nombre: 'MARIANGEL JOSE ALBARRAN MONTILLA',
-                    carrera: 'Contaduría Pública',
-                    evaluaciones: [
-                        { nombre: 'EVAL 1', puntaje: 18, ponderado: 3.6, porcentaje: 20 },
-                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
-                    ],
-                    definitiva: 3.6,
-                    estado: 'En progreso'
-                },
-                {
-                    cedula: '31191557',
-                    nombre: 'ELIMAR FLORANGEL MORALES GOYO',
-                    carrera: 'Contaduría Pública',
-                    evaluaciones: [
-                        { nombre: 'EVAL 1', puntaje: 18, ponderado: 3.6, porcentaje: 20 },
-                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
-                    ],
-                    definitiva: 3.6,
-                    estado: 'En progreso'
-                },
-                {
-                    cedula: '30720049',
-                    nombre: 'MANUEL ALEJANDRO SUAREZ CEDEÑO',
-                    carrera: 'Administración de Empresas',
-                    evaluaciones: [
-                        { nombre: 'EVAL 1', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
-                    ],
-                    definitiva: 0,
-                    estado: 'Sin calificaciones'
-                },
-                {
-                    cedula: '28307516',
-                    nombre: 'GABRIEL DAVID CANDEO AZUAJE',
-                    carrera: 'Contaduría Pública',
-                    evaluaciones: [
-                        { nombre: 'EVAL 1', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 2', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 3', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 4', puntaje: 0, ponderado: 0, porcentaje: 20 },
-                        { nombre: 'EVAL 5', puntaje: 0, ponderado: 0, porcentaje: 20 }
-                    ],
-                    definitiva: 0,
-                    estado: 'Sin calificaciones'
-                }
-            ];
-
-            const estudiante = estudiantesEjemplo.find(est => est.cedula === cedula);
-            
-            if (estudiante) {
-                return {
-                    encontrado: true,
-                    ...estudiante
-                };
-            } else {
-                return { encontrado: false };
+                console.error('Error consultando Google Sheets:', error);
+                // Fallback a datos locales
+                return estudiantes.find(est => est.cedula === cedula);
             }
         }
+
+        async function consultarGoogleSheet(sheetId) {
+            // Usar Google Sheets API pública (sin autenticación)
+            // Versión actualizada: 2025-01-10-17:15 - Nombres descriptivos aplicados
+            const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+            
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+                
+                // Parsear respuesta de Google Sheets
+                const jsonData = JSON.parse(text.substring(47, text.length - 2));
+                const rows = jsonData.table.rows;
+                
+                const estudiantes = [];
+                
+                // Procesar filas (saltar encabezados)
+                for (let i = 2; i < rows.length; i++) {
+                    const row = rows[i];
+                    if (row.c && row.c.length >= 13) {
+                        const cedula = row.c[3]?.v?.toString() || '';
+                        const apellidos = row.c[1]?.v?.toString() || '';
+                        const nombres = row.c[2]?.v?.toString() || '';
+                        
+                        if (cedula && cedula !== '0' && apellidos && nombres) {
+                            const evaluaciones = [
+                                { nombre: 'Informe y Exposición', puntaje: parseFloat(row.c[4]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna E (EVAL 1)
+                                { nombre: 'Ejercicios Exposición', puntaje: parseFloat(row.c[6]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna G (EVAL 2)
+                                { nombre: 'Ensayos Acumulados', puntaje: parseFloat(row.c[8]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna I (EVAL 3)
+                                { nombre: 'Ejercicios Acumulados', puntaje: parseFloat(row.c[10]?.v) || 0, ponderado: 0, porcentaje: 20 }, // Columna K (EVAL 4)
+                                { nombre: 'Asistencia y Participación', puntaje: parseFloat(row.c[12]?.v) || 0, ponderado: 0, porcentaje: 20 } // Columna M (EVAL 5)
+                            ];
+                            
+                            // Calcular ponderados
+                            evaluaciones.forEach(eval => {
+                                eval.ponderado = (eval.puntaje * eval.porcentaje) / 100;
+                            });
+                            
+                            const definitiva = evaluaciones.reduce((sum, eval) => sum + eval.ponderado, 0);
+                            
+                            estudiantes.push({
+                                cedula: cedula,
+                                nombre: `${apellidos} ${nombres}`.toUpperCase(),
+                                carrera: sheetId === '17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC' ? 'Contaduría Pública' : 'Administración de Empresas',
+                                evaluaciones: evaluaciones,
+                                definitiva: definitiva,
+                                estado: definitiva > 0 ? 'En progreso' : 'Sin calificaciones'
+                            });
+                        }
+                    }
+                }
+                
+                return estudiantes;
+            } catch (error) {
+                console.error('Error consultando Google Sheet:', error);
+                return [];
+            }
+        }
+
+        async function actualizarCalificacionesJSON(estudiantes) {
+            try {
+                // Actualizar el archivo calificaciones.json
+                const response = await fetch('/assets/data/calificaciones.json', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(estudiantes)
+                });
+                
+                if (response.ok) {
+                    console.log('Calificaciones actualizadas en el servidor');
+                }
+            } catch (error) {
+                console.log('No se pudo actualizar el archivo JSON (normal en GitHub Pages)');
+            }
+        }
+
 
         // Función para mostrar las calificaciones
         function mostrarCalificaciones(calificaciones) {
