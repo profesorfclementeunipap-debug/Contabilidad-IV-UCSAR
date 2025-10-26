@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidad IV - Dashboard | UCSAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .theme-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .university-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+    </style>
+    <script src="assets/js/calificaciones.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    
+    <!-- Header de la Universidad -->
+    <header class="university-header text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold">Pontificia Universidad Católica Santa Rosa</h1>
+                    <p class="text-blue-100">Contabilidad IV (CON-2465)</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-blue-100">Profesor</p>
+                    <p class="font-semibold">Lic. Frank Clemente</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Principal -->
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Bienvenida -->
+        <section class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Dashboard de Contabilidad IV</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Bienvenidos al sistema de planificación de cátedra. Aquí podrán consultar cada tema, 
+                objetivos, metodologías y recursos de aprendizaje.
+            </p>
+        </section>
+
+        <!-- Planificación Detallada -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg mr-3">📅</span>
+                    Planificación Detallada del Curso
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Consulta la planificación completa con fechas, objetivos y estrategias de cada sesión.
+                </p>
+                <a href="https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-detallada-contabilidad-iv.html" 
+                   class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                    <span class="mr-2">📋</span>
+                    Ver Planificación Completa
+                </a>
+            </div>
+        </section>
+
+        <!-- Temas del Curso -->
+        <section>
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-lg mr-3">📚</span>
+                Temas del Curso
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Tema 1 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-contabilidad-iv.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 1</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Consignaciones y Comisiones</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Procedimientos contables especiales para contratos de consignación y comisiones.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 21/10/2025 (Semana 2)
+                    </div>
+                </div>
+
+                <!-- Tema 2 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema2-ventas-plazo.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 2</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Ventas a Plazo</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Contratos de ventas a plazos y procedimientos de registro especiales.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 23/10/2025 (Semana 3)
+                    </div>
+                </div>
+
+                <!-- Tema 3 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema3-agencias-sucursales.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 3</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Agencias y Sucursales</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Organizaciones descentralizadas y estados financieros combinados.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 28/10/2025 (Semana 4)
+                    </div>
+                </div>
+
+                <!-- Tema 4 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema4-combinacion-negocios.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 4</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Combinación de Negocios</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Fusión de empresas y contabilidad de inversiones permanentes.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 30/10/2025 (Semana 4)
+                    </div>
+                </div>
+
+                <!-- Tema 5 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema5-consolidacion-eef.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 5</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Consolidación de EE.FF.</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Preparación técnica de informes consolidados.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 04/11/2025 (Semana 5)
+                    </div>
+                </div>
+
+                <!-- Tema 6 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema6-dividendos-operaciones.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 6</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Dividendos y Operaciones</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Distribuciones de utilidades y eliminación de transacciones internas.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 06/11/2025 (Semana 5)
+                    </div>
+                </div>
+
+                <!-- Tema 7 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema7-diferencia-valor.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 7</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Diferencia de Valor</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Análisis de diferencias entre costo de adquisición y valor según libros.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 11/11/2025 (Semana 6)
+                    </div>
+                </div>
+
+                <!-- Tema 8 -->
+                <div class="theme-card bg-white rounded-xl shadow-lg p-6" onclick="openTheme('https://profesorfclementeunipap-debug.github.io/Contabilidad-IV-UCSAR/planificacion-tema8-estructura-afiliacion.html')">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold mr-3">Tema 8</div>
+                        <h4 class="text-lg font-semibold text-gray-800">Estructura de Afiliación</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Distribución de utilidades basada en estructura de participación.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <span class="font-semibold">Fecha:</span> 13/11/2025 (Semana 6)
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Consulta de Calificaciones -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg mr-3">📊</span>
+                Consulta de Calificaciones
+            </h3>
+            <p class="text-gray-600 mb-8">Ingresa tu número de cédula para consultar tus calificaciones en tiempo real.</p>
+            
+            <div class="max-w-md mx-auto">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                            <span class="text-2xl">🔍</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Consulta tu Progreso</h4>
+                        <p class="text-blue-600 text-sm">Ingresa tu cédula para ver tus calificaciones</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="cedula" class="block text-sm font-medium text-gray-700 mb-2">Número de Cédula:</label>
+                            <input type="text" 
+                                   id="cedula" 
+                                   placeholder="Ej: 12345678"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center text-lg">
+                        </div>
+                        
+                        <div class="text-center">
+                            <button onclick="consultarCalificaciones()" 
+                                    class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
+                                <span class="mr-2">📊</span>
+                                Consultar Calificaciones
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resultados de Calificaciones -->
+            <div id="resultados-calificaciones" class="mt-8 hidden">
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Resultados de Búsqueda</h4>
+                    <div id="datos-estudiante" class="space-y-4">
+                        <!-- Los datos se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registro en Cuadro de Notas -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-lg mr-3">📝</span>
+                Registro en Cuadro de Notas
+            </h3>
+            <p class="text-gray-600 mb-8">Regístrate en el cuadro de notas según tu carrera. Es importante que sigas las instrucciones para mantener el formato correcto.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Administración de Empresas -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                            <span class="text-2xl">🏢</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-blue-800 mb-2">Administración de Empresas</h4>
+                        <p class="text-blue-600 text-sm">Para estudiantes de la carrera de Administración de Empresas</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                        <h5 class="font-semibold text-gray-800 mb-3">📋 Instrucciones:</h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <strong>NO modifiques</strong> el formato del cuadro</li>
+                            <li>• <strong>Nombre completo:</strong> Todas las letras en MAYÚSCULA</li>
+                            <li>• <strong>Cédula:</strong> Solo números, sin puntos</li>
+                            <li>• Coloca tu nombre completo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://docs.google.com/spreadsheets/d/1bTIrzyHKB6K7yzE8fKW9Gi_93NaniGHH/edit?usp=sharing&ouid=106879328100388920145&rtpof=true&sd=true" 
+                           target="_blank"
+                           class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl">
+                            <span class="mr-3 text-xl">📊</span>
+                            Registrarse en Cuadro de Notas
+                            <span class="ml-3 text-sm">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contaduría -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-green-800 mb-2">Contaduría</h4>
+                        <p class="text-green-600 text-sm">Para estudiantes de la carrera de Contaduría</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                        <h5 class="font-semibold text-gray-800 mb-3">📋 Instrucciones:</h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <strong>NO modifiques</strong> el formato del cuadro</li>
+                            <li>• <strong>Nombre completo:</strong> Todas las letras en MAYÚSCULA</li>
+                            <li>• <strong>Cédula:</strong> Solo números, sin puntos</li>
+                            <li>• Coloca tu nombre completo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://docs.google.com/spreadsheets/d/17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC/edit?usp=sharing&ouid=106879328100388920145&rtpof=true&sd=true" 
+                           target="_blank"
+                           class="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl">
+                            <span class="mr-3 text-xl">📊</span>
+                            Registrarse en Cuadro de Notas
+                            <span class="ml-3 text-sm">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <span class="text-yellow-400 text-xl">⚠️</span>
+                    </div>
+                    <div class="ml-3">
+                        <h4 class="text-sm font-medium text-yellow-800">Importante:</h4>
+                        <p class="text-sm text-yellow-700 mt-1">
+                            Asegúrate de seleccionar el cuadro correcto según tu carrera. 
+                            Si tienes dudas sobre cuál usar, consulta con el profesor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información del Profesor -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-lg mr-3">👨‍🏫</span>
+                Información del Profesor
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Lic. Frank Clemente</h4>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Profesor de Contabilidad IV en la Pontificia Universidad Católica Santa Rosa.
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p><span class="font-semibold">Materia:</span> Contabilidad IV (CON-2465)</p>
+                        <p><span class="font-semibold">Período:</span> Octubre - Noviembre 2025</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Recursos de Apoyo</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Material fotocopiado y guías</li>
+                        <li>• Ejercicios prácticos</li>
+                        <li>• Foros de discusión</li>
+                        <li>• Documentos colaborativos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentos Oficiales UCSAR -->
+        <section class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-lg mr-3">📋</span>
+                Documentos Oficiales UCSAR
+            </h3>
+            <p class="text-gray-600 mb-8">Documentos institucionales y normativas de la Universidad Católica Santa Rosa</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">⚖️</span>
+                        <h4 class="text-lg font-semibold text-gray-800">REGLAMENTO DE SANCIONES Y PROCEDIMIENTOS DISCIPLINARIOS</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Reglamento de sanciones y procedimientos disciplinarios</p>
+                    <a href="https://drive.google.com/file/d/1uTux84UHrxsVWm57tTAwQnD6574XR8MD/view?usp=drive_link" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📋</span>
+                        <h4 class="text-lg font-semibold text-gray-800">REGLAMENTO DE EVALUACIÓN.pdf</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Reglamento de evaluación académica</p>
+                    <a href="https://drive.google.com/file/d/17QF8Fu4xKhWAZ1HefkytQv95-2S2gSXf/view?usp=drive_link" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📰</span>
+                        <h4 class="text-lg font-semibold text-gray-800">GACETA OFICIAL 42209 DEL 090921 ESTUDIOS MULTIMODALES</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Gaceta oficial sobre estudios multimodales</p>
+                    <a href="https://drive.google.com/file/d/1jcvy5tPoSKTBMOUokUJXAKEl55te5tUe/view?usp=sharing" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <span class="text-3xl mr-4">📅</span>
+                        <h4 class="text-lg font-semibold text-gray-800">Calendario 2025-III.pdf</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Calendario académico del tercer trimestre 2025</p>
+                    <a href="https://drive.google.com/file/d/1nyTbYIprgI5ENMdP7kIQ_v9RQ4Smjgma/view?usp=sharing" 
+                       target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                        <span class="mr-2">📥</span>
+                        Descargar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <p class="text-sm text-gray-300">
+                    © 2025 Pontificia Universidad Católica Santa Rosa - Contabilidad IV
+                </p>
+                <p class="text-xs text-gray-400 mt-2">
+                    Sistema de Planificación de Cátedra - Lic. Frank Clemente
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función para activar la acción de GitHub (deshabilitada temporalmente)
+        async function triggerGitHubAction() {
+            // Esta función está deshabilitada por ahora
+            // Para habilitarla, necesitas agregar un token personal de GitHub válido
+            console.log('GitHub Action trigger deshabilitado - usando datos locales');
+            return false;
+        }
+        </script>
+
+</body>
+</html>
