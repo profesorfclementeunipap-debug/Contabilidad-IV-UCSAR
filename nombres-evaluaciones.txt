@@ -1,0 +1,14 @@
+NOMBRES DE EVALUACIONES ACTUALIZADOS - 2025-01-10 17:15
+
+EVAL 1 → Informe y Exposición
+EVAL 2 → Ejercicios Exposición  
+EVAL 3 → Ensayos Acumulados
+EVAL 4 → Ejercicios Acumulados
+EVAL 5 → Asistencia y Participación
+
+Aplicado en:
+- update-grades.js
+- index.html
+- assets/data/calificaciones.json
+
+Estado: ✅ COMPLETADO

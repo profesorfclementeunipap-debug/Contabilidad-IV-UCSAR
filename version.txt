@@ -1,0 +1,7 @@
+Versión actualizada: 2025-01-10 16:45
+Corrección de columnas aplicada:
+- Columna E: Exposiciones
+- Columna G: Ejercicios Exposición  
+- Columna I: Informes Acumulados
+- Columna K: Ejercicios Acumulados
+- Columna M: Asistencia y Participación
