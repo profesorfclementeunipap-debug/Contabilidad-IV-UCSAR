@@ -583,6 +583,10 @@
     </footer>
 
     <script>
+        function openTheme(url) {
+            window.open(url, '_blank');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const ctx = document.getElementById('evaluationChart').getContext('2d');
             const evaluationChart = new Chart(ctx, {
