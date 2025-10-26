@@ -4,10 +4,8 @@
 			"path": "."
 		},
 		{
-			"path": "../../Contabilidad de Costo I"
+			"path": "../Tema 2- Ventas a Largo Plazo"
 		}
 	],
-	"settings": {
-		"git.ignoreLimitWarning": true
-	}
+	"settings": {}
 }

@@ -451,6 +451,14 @@
             window.open(url, '_blank');
         }
 
+        // Función para activar la acción de GitHub (deshabilitada temporalmente)
+        async function triggerGitHubAction() {
+            // Esta función está deshabilitada por ahora
+            // Para habilitarla, necesitas agregar un token personal de GitHub válido
+            console.log('GitHub Action trigger deshabilitado - usando datos locales');
+            return false;
+        }
+
         // Función para consultar calificaciones desde Google Sheets
         async function consultarCalificaciones() {
             const cedula = document.getElementById('cedula').value.trim();
@@ -462,7 +470,7 @@
                 return;
             }
 
-            // Mostrar loading
+            // Mostrar loading inicial
             datosEstudiante.innerHTML = `
                 <div class="text-center py-8">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
@@ -472,7 +480,7 @@
             resultados.classList.remove('hidden');
 
             try {
-                // Simular consulta a Google Sheets (en producción usarías la API real)
+                // Consultar las calificaciones directamente
                 const calificaciones = await simularConsultaCalificaciones(cedula);
                 
                 if (calificaciones.encontrado) {
@@ -647,11 +655,17 @@
             `;
 
             calificaciones.evaluaciones.forEach((eval, index) => {
-                const color = eval.puntaje >= 18 ? 'green' : eval.puntaje >= 15 ? 'yellow' : 'red';
+                let colorClass = 'text-red-600';
+                if (eval.puntaje >= 18) {
+                    colorClass = 'text-green-600';
+                } else if (eval.puntaje >= 15) {
+                    colorClass = 'text-yellow-600';
+                }
+                
                 html += `
                     <div class="bg-gray-50 rounded-lg p-4 text-center">
                         <div class="text-sm font-medium text-gray-600 mb-2">${eval.nombre}</div>
-                        <div class="text-2xl font-bold text-${color}-600 mb-1">${eval.puntaje}</div>
+                        <div class="text-2xl font-bold ${colorClass} mb-1">${eval.puntaje}</div>
                         <div class="text-xs text-gray-500">Ponderado: ${eval.ponderado}</div>
                         <div class="text-xs text-gray-400">${eval.porcentaje}%</div>
                     </div>
