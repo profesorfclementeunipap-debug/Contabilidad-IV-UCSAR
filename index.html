@@ -28,6 +28,41 @@
         function openTheme(url) {
             window.open(url, '_blank');
         }
+
+        // Función para consultar calificaciones desde Google Sheets
+        async function consultarCalificaciones() {
+            const cedula = document.getElementById('cedula').value.trim();
+            const resultados = document.getElementById('resultados-calificaciones');
+            const datosEstudiante = document.getElementById('datos-estudiante');
+
+            if (!cedula) {
+                alert('Por favor ingresa tu número de cédula');
+                return;
+            }
+
+            // Mostrar loading inicial
+            datosEstudiante.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p class="text-gray-600">Consultando calificaciones...</p>
+                </div>
+            `;
+            resultados.classList.remove('hidden');
+
+            try {
+                // Consultar las calificaciones directamente
+                const calificaciones = await simularConsultaCalificaciones(cedula);
+                
+                if (calificaciones.encontrado) {
+                    mostrarCalificaciones(calificaciones);
+                } else {
+                    mostrarError('No se encontraron calificaciones para la cédula ingresada');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                mostrarError('Error al consultar las calificaciones. Intenta nuevamente.');
+            }
+        }
     </script>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -458,41 +493,6 @@
             // Para habilitarla, necesitas agregar un token personal de GitHub válido
             console.log('GitHub Action trigger deshabilitado - usando datos locales');
             return false;
-        }
-
-        // Función para consultar calificaciones desde Google Sheets
-        async function consultarCalificaciones() {
-            const cedula = document.getElementById('cedula').value.trim();
-            const resultados = document.getElementById('resultados-calificaciones');
-            const datosEstudiante = document.getElementById('datos-estudiante');
-
-            if (!cedula) {
-                alert('Por favor ingresa tu número de cédula');
-                return;
-            }
-
-            // Mostrar loading inicial
-            datosEstudiante.innerHTML = `
-                <div class="text-center py-8">
-                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                    <p class="text-gray-600">Consultando calificaciones...</p>
-                </div>
-            `;
-            resultados.classList.remove('hidden');
-
-            try {
-                // Consultar las calificaciones directamente
-                const calificaciones = await simularConsultaCalificaciones(cedula);
-                
-                if (calificaciones.encontrado) {
-                    mostrarCalificaciones(calificaciones);
-                } else {
-                    mostrarError('No se encontraron calificaciones para la cédula ingresada');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                mostrarError('Error al consultar las calificaciones. Intenta nuevamente.');
-            }
         }
 
         // Función para consultar calificaciones desde archivo JSON
