@@ -44,7 +44,7 @@ async function consultarGoogleSheet(sheetId) {
                     estudiantes.push({
                         cedula: cedula,
                         nombre: `${apellidos} ${nombres}`.toUpperCase(),
-                        carrera: sheetId === '17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC' ? 'Contaduría Pública' : 'Administración de Empresas',
+                        carrera: sheetId === '11h5-a7TKcAm_jkogdLdGYL4zAS5WqRbP' ? 'Contaduría Pública' : 'Administración de Empresas',
                         evaluaciones: evaluaciones,
                         definitiva: definitiva,
                         estado: definitiva > 0 ? 'En progreso' : 'Sin calificaciones'
@@ -65,8 +65,8 @@ async function actualizarCalificaciones() {
         console.log('Consultando Google Sheets...');
         
         // Consultar ambas hojas
-        const contaduriaData = await consultarGoogleSheet('17rp0GHTxVf4G3kTJzSXXurKpcVgyJgZC');
-        const administracionData = await consultarGoogleSheet('1bTIrzyHKB6K7yzE8fKW9Gi_93NaniGHH');
+        const contaduriaData = await consultarGoogleSheet('11h5-a7TKcAm_jkogdLdGYL4zAS5WqRbP');
+        const administracionData = await consultarGoogleSheet('1RvimexyqpdqH3555r5msaWBTjNm1_2cX');
         
         // Combinar datos
         const todosLosEstudiantes = [...contaduriaData, ...administracionData];
