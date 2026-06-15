@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución Ejercicio 27-1 | Agencias y Sucursales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #334155; }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+        .table-header { background-color: #1e293b; color: white; }
+        .table-row:nth-child(even) { background-color: #f1f5f9; }
+        .account-indent { padding-left: 2rem; }
+        .value-right { text-align: right; }
+    </style>
+</head>
+<body class="antialiased pb-12">
+    <!-- Navegación -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-xl"><i class="fa-solid fa-book-open mr-2"></i> UCSAR - Contabilidad IV</div>
+            <a href="planificacion-tema3-agencias-sucursales.html" class="text-sky-300 hover:text-sky-100 transition"><i class="fa-solid fa-arrow-left mr-1"></i> Volver a Planificación</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-800 to-sky-600 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Tema 3: Agencias y Sucursales</span>
+            <h1 class="text-4xl font-bold mt-4 mb-2">Resolución Práctica: Ejercicio 27-1</h1>
+            <p class="text-lg opacity-90">Distribuidora Tropical S.A. y Sucursal Cumaná</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-12 space-y-12">
+
+        <!-- Info Card -->
+        <section class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 border-l-4 border-l-sky-500">
+            <h2 class="text-xl font-bold text-slate-800 mb-2">Premisas del Ejercicio</h2>
+            <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
+                <li>Facturación a la sucursal con un <strong>recargo del 50%</strong> sobre el costo.</li>
+                <li>Operaciones del 01/01/1991 al 31/12/1991.</li>
+                <li>Ajustes de inventario y recargo realizado al final del período.</li>
+            </ul>
+        </section>
+
+        <!-- Libro Diario Sucursal -->
+        <section>
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6">1. Libro Diario: Sucursal Cumaná</h2>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+                <table class="w-full text-sm text-left">
+                    <thead class="table-header">
+                        <tr>
+                            <th class="px-4 py-3">N°</th>
+                            <th class="px-4 py-3">Descripción y Cuentas</th>
+                            <th class="px-4 py-3 value-right">Debe (Bs.)</th>
+                            <th class="px-4 py-3 value-right">Haber (Bs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">1</td>
+                            <td class="px-4 py-3">Inventario (Mercancías Central)<br><span class="account-indent">Casa Central</span></td>
+                            <td class="px-4 py-3 value-right">732,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>732,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">2</td>
+                            <td class="px-4 py-3">Caja-Bancos<br>Efectos por Cobrar<br>Cuentas por Cobrar<br><span class="account-indent">Ventas</span></td>
+                            <td class="px-4 py-3 value-right">190,000.00<br>1,120,000.00<br>290,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br><br>1,600,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">3</td>
+                            <td class="px-4 py-3">Caja-Bancos<br>Gastos por Intereses<br>Gastos Bancarios<br><span class="account-indent">Efectos Descontados</span></td>
+                            <td class="px-4 py-3 value-right">871,650.00<br>27,000.00<br>1,350.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br><br>900,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">4</td>
+                            <td class="px-4 py-3">Casa Central<br><span class="account-indent">Inventario (Mercancías)</span><br><em class="text-xs text-slate-500">Envío de mercancía a cliente de Central</em></td>
+                            <td class="px-4 py-3 value-right">90,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>90,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">5</td>
+                            <td class="px-4 py-3">Gastos de Administración<br>Gastos de Ventas (8% s/ 1.6M)<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">92,000.00<br>128,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>220,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">6</td>
+                            <td class="px-4 py-3">Caja-Bancos<br><span class="account-indent">Cuentas por Cobrar</span><br><span class="account-indent">Efectos por Cobrar</span></td>
+                            <td class="px-4 py-3 value-right">350,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>185,000.00<br>165,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">7</td>
+                            <td class="px-4 py-3">Casa Central<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">1,000,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>1,000,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">8</td>
+                            <td class="px-4 py-3">Efectos por Pagar<br>Cuentas por Pagar<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">21,000.00<br>10,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>31,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">Aj-A</td>
+                            <td class="px-4 py-3">Efectos Descontados<br><span class="account-indent">Efectos por Cobrar</span><br>Efectos Devueltos (Cobrar)<br>Gastos Bancarios<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">750,000.00<br><br>110,000.00<br>130.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>750,000.00<br><br><br>110,130.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">Aj-B</td>
+                            <td class="px-4 py-3">Gasto Provisión Incobrables<br><span class="account-indent">Provisión Incobrables</span></td>
+                            <td class="px-4 py-3 value-right">20,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>20,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">Aj-C</td>
+                            <td class="px-4 py-3">Gasto Depreciación E.O.<br><span class="account-indent">Depreciación Acum. E.O.</span></td>
+                            <td class="px-4 py-3 value-right">5,452.50<br></td>
+                            <td class="px-4 py-3 value-right"><br>5,452.50</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">CV</td>
+                            <td class="px-4 py-3">Costo de Ventas<br><span class="account-indent">Inventario Inicial</span><br><span class="account-indent">Mercancías Recibidas Central</span><br>Inventario Final<br><span class="account-indent">Costo de Ventas</span></td>
+                            <td class="px-4 py-3 value-right">837,300.00<br><br><br>63,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>195,300.00<br>642,000.00<br><br>63,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Libro Diario Central -->
+        <section>
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6">2. Libro Diario: Casa Central</h2>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+                <table class="w-full text-sm text-left">
+                    <thead class="table-header">
+                        <tr>
+                            <th class="px-4 py-3">N°</th>
+                            <th class="px-4 py-3">Descripción y Cuentas</th>
+                            <th class="px-4 py-3 value-right">Debe (Bs.)</th>
+                            <th class="px-4 py-3 value-right">Haber (Bs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">1</td>
+                            <td class="px-4 py-3">Compras<br><span class="account-indent">Efectos por Pagar</span><br><span class="account-indent">Cuentas por Pagar</span></td>
+                            <td class="px-4 py-3 value-right">1,700,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>1,500,000.00<br>200,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">2</td>
+                            <td class="px-4 py-3">Caja-Bancos<br>Efectos por Cobrar<br>Cuentas por Cobrar<br><span class="account-indent">Ventas</span></td>
+                            <td class="px-4 py-3 value-right">930,000.00<br>2,000,000.00<br>320,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br><br>3,250,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">3</td>
+                            <td class="px-4 py-3">Caja-Bancos<br>Gastos por Intereses<br>Gastos Bancarios<br><span class="account-indent">Efectos Descontados</span></td>
+                            <td class="px-4 py-3 value-right">2,244,800.00<br>51,750.00<br>3,450.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br><br>2,300,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">4</td>
+                            <td class="px-4 py-3">Efectos por Pagar<br>Cuentas por Pagar<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">1,900,000.00<br>230,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>2,130,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">5</td>
+                            <td class="px-4 py-3">Sucursal Cumaná<br>Depreciación Acumulada E.O.<br><span class="account-indent">Equipos de Oficina</span></td>
+                            <td class="px-4 py-3 value-right">1,350.00<br>800.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>2,150.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">6</td>
+                            <td class="px-4 py-3">Gastos de Publicidad<br>Sucursal Cumaná<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">200,000.00<br>40,000.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>240,000.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">7</td>
+                            <td class="px-4 py-3">Gastos de Administración<br>Gastos de Ventas<br><span class="account-indent">Caja-Bancos</span></td>
+                            <td class="px-4 py-3 value-right">184,150.00<br>463,125.00<br></td>
+                            <td class="px-4 py-3 value-right"><br><br>647,275.00</td>
+                        </tr>
+                        <tr class="table-row border-b border-slate-200">
+                            <td class="px-4 py-3 font-semibold">Aj</td>
+                            <td class="px-4 py-3">Ajuste Inventario Sucursal<br><span class="account-indent">Utilidad Sucursal Cumaná</span><br><em class="text-xs text-slate-500">Realización del recargo de inventario vendido</em></td>
+                            <td class="px-4 py-3 value-right">258,100.00<br></td>
+                            <td class="px-4 py-3 value-right"><br>258,100.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Estados Financieros Consolidados -->
+        <section>
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6">3. Resumen Financiero Consolidado</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold text-sky-700 mb-4">Estado de Resultados (Cierre Período)</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b pb-1"><span>Ventas Totales</span> <strong>4,850,000.00</strong></li>
+                        <li class="flex justify-between border-b pb-1"><span>Costo de Ventas Consolidado</span> <strong>(2,263,000.00)</strong></li>
+                        <li class="flex justify-between border-b pb-1 text-sky-800 font-bold"><span>Utilidad Bruta</span> <strong>2,587,000.00</strong></li>
+                        <li class="flex justify-between border-b pb-1"><span>Gastos Operativos (Central + Suc)</span> <strong>(1,076,019.75)</strong></li>
+                        <li class="flex justify-between text-base font-black text-emerald-600 pt-2"><span>Utilidad Neta Consolidada</span> <strong>1,510,980.25</strong></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 text-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-sky-300 mb-4">Conclusión Técnica</h3>
+                    <p class="text-sm opacity-90 mb-4">
+                        La eliminación de las cuentas recíprocas ("Casa Central" y "Sucursal Cumaná") y la realización del <strong>Ajuste de Inventario</strong> demuestran la verdadera rentabilidad de la empresa.
+                    </p>
+                    <p class="text-sm opacity-90">
+                        El recargo del 50% sobre las mercancías facturadas a la sucursal fue rectificado, reconociendo <strong>Bs. 258,100.00</strong> como ganancia real en los libros consolidados al momento de la venta final a terceros.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Diplomado Contabilidad Financiera - UCSAR</p>
+    </footer>
+</body>
+</html>
